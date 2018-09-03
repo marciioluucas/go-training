@@ -2,7 +2,9 @@ package controllers
 
 import (
 	"github.com/kataras/iris"
-	"novaxs.com/go-training/iris-hello-world/src/utils"
+	"novaxs.com/go-training/iris-hello-world/app/models"
+	"novaxs.com/go-training/iris-hello-world/app/repository"
+	"novaxs.com/go-training/iris-hello-world/app/utils"
 )
 
 type UserController struct {
@@ -23,7 +25,10 @@ func (uc UserController) get() {
 }
 
 func (uc UserController) post() {
-
+	repo := repository.UserRepository{}.New()
+	user := models.User{}
+	user.Password = "dasdasd"
+	repo.Create(user)
 }
 
 func (uc UserController) put() {

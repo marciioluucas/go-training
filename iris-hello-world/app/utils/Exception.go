@@ -25,10 +25,10 @@ func (e *Exception) GetMessage() string {
 	return e.message
 }
 
-func (e *Exception) SetCode(code int) {
+func (e *Exception) SetCode(code string) {
 	e.code = code
 }
 
-func (e *Exception) GetCode() int {
+func (e *Exception) GetCode() string {
 	return e.code
 }
